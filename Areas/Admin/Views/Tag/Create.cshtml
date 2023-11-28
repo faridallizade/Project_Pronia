@@ -1,0 +1,14 @@
+﻿@using Project_Pronia.Models;
+@model Tags;
+
+<div class="container" style="margin-left:380px">
+
+    <form asp-controller="Tag" asp-action="Create" method="post">
+        <div class="form-group" style="width: 500px">
+            <label asp-for="Name">Tag Name</label>
+            <input asp-for="Name" type="text" class="form-control" placeholder="Enter tag name">
+        </div>
+        <button type="submit" class="btn btn-primary" style="margin-left:190px">Create</button>
+    </form>
+
+</div>

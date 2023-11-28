@@ -2,9 +2,9 @@
 {
     public class Tags
     {
-        public int Id { get; set; }
+        public int? Id { get; set; }
         public string Name { get; set; }
-        public List<ProductTags> ProductTags { get; set; }
+        public List<ProductTags>? ProductTags { get; set; }
         
     }
 }

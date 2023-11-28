@@ -1,0 +1,38 @@
+﻿@using Project_Pronia.Models;
+@model List<Tags>
+@{
+    int count = 0;
+}
+
+<div class="container">
+
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">No#</th>
+                <th scope="col">Tag Name</th>
+                <th scope="col"></th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                count++;
+                <tr>
+                    <th scope="row">@count</th>
+                    <td>@item.Name</td>
+                    <td>
+                        <a class="btn btn-secondary" asp-controller="Tag" asp-action="Update" asp-route-id="@item.Id">Update</a>
+                        <a class="btn btn-danger" asp-controller="Tag" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                    </td>
+                </tr>
+            }
+
+        </tbody>
+    </table>
+    <div style="margin:0px 450px">
+        <a class="btn btn-primary" asp-controller="Tag" asp-action="Create">Create</a>
+    </div>
+</div>
+x

@@ -1,0 +1,15 @@
+﻿@using Project_Pronia.Models;
+@model Categories;
+
+<div class="container" style="margin-left:380px">
+
+    <form asp-controller="Category" asp-action="Update" method="post">
+        <div class="form-group" style="width: 500px">
+            <label asp-for="Name">Category Name</label>
+            <input asp-for="Name" type="text" class="form-control" placeholder="Enter new category name">
+        </div>
+        <button type="submit" class="btn btn-primary" style="margin-left:190px">Update</button>
+    </form>
+
+</div>
+

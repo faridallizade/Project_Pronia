@@ -1,4 +1,12 @@
-﻿<!DOCTYPE html>
+﻿@using Project_Pronia.Services;
+
+
+@inject LayoutServices layoutService
+@{
+    Dictionary<string, string> setting = await layoutService.GetSetting();
+}
+
+<!DOCTYPE html>
 <html lang="zxx">
 <head>
     <meta charset="UTF-8" />

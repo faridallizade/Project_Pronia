@@ -1,0 +1,29 @@
+﻿@using Project_Pronia.Models;
+@model List<Setting>
+<table class="table">
+	<thead>
+		<tr>
+			<th scope="col">Key</th>
+			<th scope="col">Value</th>
+			<th scope="col"></th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			@foreach (var item in Model)
+			{
+				<td>Mark</td>
+				<td>Otto</td>
+				<td>
+					<a asp-action="Update" asp-route-id="" class="btn btn-dark">Update</a>
+					<a asp-action="Delete" asp-route-id="" class="btn btn-danger">Delete</a>
+				</td>
+			}
+		</tr>
+	</tbody>
+</table>
+
+------------------------------------------------
+INDEXDE ASP ROUTE ID VERMELISEN
+SETTING MODELINI DUZELT
+MIGRATION

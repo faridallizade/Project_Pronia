@@ -19,6 +19,3 @@ namespace Project_Pronia.Services
 
 	}
 }
-
-
-//Inject ve CRUD yaratmaq qaldi

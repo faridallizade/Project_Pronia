@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Project_Pronia.DAL;
+using Project_Pronia.Services;
 
 namespace Project_Pronia
 {
@@ -10,6 +11,7 @@ namespace Project_Pronia
         {
             var builder = WebApplication.CreateBuilder(args);
             builder.Services.AddControllersWithViews();
+            builder.Services.AddScoped<LayoutServices>();
             builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlServer("server=DESKTOP-4R5RDF2;database=ProniaDB;trusted_connection=true;Integrated security=true;Encrypt=false"));
             var app = builder.Build();
             app.UseStaticFiles();

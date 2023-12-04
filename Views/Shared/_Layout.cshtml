@@ -105,11 +105,11 @@
                             <div class="header-middle-wrap position-relative">
                                 <div class="header-contact d-none d-lg-flex">
                                     <i class="pe-7s-call"></i>
-                                    <a href="tel://+00-123-456-789">+00 123 456 789</a>
+                                    <a href="tel://@setting["Phone"]">@setting["Phone"]</a>
                                 </div>
 
                                 <a href="index.html" class="header-logo">
-                                    <img src="~/assets/images/logo/dark.png" alt="Header Logo" />
+                                    <img src="~/assets/images/logo/@setting["Logo"]" alt="Header Logo" />
                                 </a>
 
                                 <div class="header-right">
@@ -119,7 +119,7 @@
                                                class="search-btn bt"
                                                data-bs-toggle="modal"
                                                data-bs-target="#exampleModal">
-                                                <i class="pe-7s-search"></i>
+                                                @Html.Raw(@setting["Icon"])
                                             </a>
                                         </li>
                                         <li class="dropdown d-none d-lg-block">
@@ -484,7 +484,7 @@
                         </div>
                         <div class="header-contact offcanvas-contact">
                             <i class="pe-7s-call"></i>
-                            <a href="tel://+00-123-456-789">+00 123 456 789</a>
+                            <a href="tel://"@setting["Phone"]">@setting["Phone"]</a>
                         </div>
                         <div class="offcanvas-user-info">
                             <ul class="dropdown-wrap">
@@ -917,15 +917,12 @@
                                     </a>
                                 </div>
                                 <p class="footer-widget-desc">
-                                    Lorem ipsum dolor sit amet, consec adipisl elit, sed do
-                                    eiusmod tempor
-                                    <br />
-                                    incidio ut labore et dolore magna.
+                                    @setting["BottomDescription"]
                                 </p>
                                 <div class="social-link with-border">
                                     <ul>
                                         <li>
-                                            <a href="#"
+                                            <a href="@setting["FacebookLink"]"
                                                data-tippy="Facebook"
                                                data-tippy-inertia="true"
                                                data-tippy-animation="shift-away"
@@ -936,7 +933,7 @@
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="#"
+                                            <a href="@setting["TwitterLink"]"
                                                data-tippy="Twitter"
                                                data-tippy-inertia="true"
                                                data-tippy-animation="shift-away"
@@ -947,7 +944,7 @@
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="#"
+                                            <a href="@setting["InstagramLink"]"
                                                data-tippy="Pinterest"
                                                data-tippy-inertia="true"
                                                data-tippy-animation="shift-away"
@@ -1041,10 +1038,10 @@
                         <div class="col-lg-3 pt-40">
                             <div class="footer-contact-info">
                                 <h3 class="footer-widget-title">Got Question? Call Us</h3>
-                                <a class="number" href="tel://123-456-789">123 456 789</a>
+                                <a class="number" href="tel://@setting["Phone"]">@setting["Phone"]</a>
                                 <div class="address">
                                     <ul>
-                                        <li>Your Address Goes Here</li>
+                                        <li>@setting["Address"]</li>
                                     </ul>
                                 </div>
                             </div>
@@ -1175,11 +1172,7 @@
                                         </select>
                                     </div>
                                     <p class="short-desc">
-                                        Lorem ipsum dolor sit amet, consectetur adipisic elit, sed
-                                        do eiusmod tempo incid ut labore et dolore magna aliqua.
-                                        Ut enim ad minim veniam, quis nostru exercitation ullamco
-                                        laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-                                        irure dolor in reprehenderit in voluptate
+                                        @setting["BottomDescription"]
                                     </p>
                                     <ul class="quantity-with-btn">
                                         <li class="quantity">

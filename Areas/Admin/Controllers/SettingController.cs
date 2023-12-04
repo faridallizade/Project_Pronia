@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Project_Pronia.DAL;
 using Project_Pronia.Models;
 
@@ -38,9 +39,9 @@ namespace Project_Pronia.Areas.Admin.Controllers
         }
 
 
-        public IActionResult Update(int Id)
+        public IActionResult Update(string Key)
         {
-            Setting setting = _context.Settings.Find(Id);
+            Setting setting = _context.Settings.Find(Key);
             if(setting == null)
             {
                 return View();
@@ -56,7 +57,7 @@ namespace Project_Pronia.Areas.Admin.Controllers
             {
                 return View();
             }
-            Setting oldSetting = _context.Settings.Find(newSetting.Id); 
+            Setting oldSetting = _context.Settings.Find(newSetting.Key); 
             if(oldSetting == null)
             {
                 return View();
@@ -66,9 +67,9 @@ namespace Project_Pronia.Areas.Admin.Controllers
             _context.SaveChanges();
             return RedirectToAction("Index");
         }
-        public IActionResult Delete(int Id)
+        public IActionResult Delete(string Key)
         {
-            var setting = _context.Settings.FirstOrDefault(s=> s.Id == Id);
+            var setting = _context.Settings.FirstOrDefault(s=> s.Key == Key);
             if (setting == null)
             {
                 return View();

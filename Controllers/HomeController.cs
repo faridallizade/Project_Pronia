@@ -22,7 +22,8 @@ namespace Project_Pronia.Controllers
                 products = _context.products.ToList(),
                 productTags = _context.productTags.ToList(),
                 sliders = _context.sliders.ToList(),
-                tags = _context.tags.ToList()
+                tags = _context.tags.ToList(),
+                settings = _context.Settings.ToList(),
             };
             
 

@@ -9,6 +9,7 @@ namespace Project_Pronia.Models
         public string SKU {  get; set; }
         public double Price { get; set; }
         public string Description { get; set; }
+        public bool  Deleted { get; set; }
         public int CategoryId { get; set; }
         public int ImageId { get; set; }
         public ProductImages? Images { get; set; }

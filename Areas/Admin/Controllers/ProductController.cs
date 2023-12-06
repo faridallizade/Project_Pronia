@@ -34,10 +34,10 @@ namespace Project_Pronia.Areas.Admin.Controllers
 		{
 			ViewBag.Categories = await _context.categories.ToListAsync();
 			ViewBag.Tags = await _context.tags.ToListAsync();
-			if (!ModelState.IsValid)
+			/*if (!ModelState.IsValid)
 			{
 				return View();
-			}
+			}*/
 			bool resultcategory = await _context.categories.AnyAsync(c => c.Id == createProductVM.CategoryId);
 			if (!resultcategory)
 			{
@@ -45,12 +45,13 @@ namespace Project_Pronia.Areas.Admin.Controllers
 				return View();
 			}
 			Products product = new Products()
-			{
+			{ 
 				Title = createProductVM.Title,
 				Price = createProductVM.Price,
 				SKU = createProductVM.SKU,
 				Description = createProductVM.Description,
 				CategoryId = createProductVM.CategoryId,
+				//Images = new List<Images>()
 			};
 			await _context.products.AddAsync(product);
 			await _context.SaveChangesAsync();

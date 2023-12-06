@@ -25,10 +25,10 @@
 				count++;
 				<tr>
 					<th scope="row">@count</th>
-					<td>@item.Title</td>
+					<td>@item.Title</td>	
 					<td>@item.SKU</td>
 					<td>@item.Price</td>
-					<td>@item.Categories.Name</td>
+					@* <td>@item.Categories.Name</td> *@
 					<td>
 						@foreach (var proT in item.ProductTags)
 						{

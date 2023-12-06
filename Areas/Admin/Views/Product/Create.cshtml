@@ -4,7 +4,7 @@
 
 <div class="container" style="margin-left:380px">
 
-    <form asp-controller="Product" asp-action="Create" method="post">
+    <form asp-controller="Product" asp-action="Create" method="post" enctype="multipart/form-data">
         <div class="form-group" style="width: 500px">
             <label asp-for="Title">Product Name</label>
             <input asp-for="Title" type="text" class="form-control" placeholder="Enter product name">
@@ -24,10 +24,29 @@
         <div>
             <label asp-for="CategoryId" class="form-label">Categories</label>
             <select class="form-select" asp-items="new SelectList(ViewBag.Categories,nameof(Categories.Id),nameof(Categories.Name))">
+                <span asp-validation-for="CategoryId" style="color:red"></span>
+
                 <option selected>Select Category</option>
             </select>
         </div>
+        <div class="row">
+            <div class="mb-3 col-md-3">
+                <label asp-for="MainPhoto" class="form-label">MainPhoto</label>
+                <input asp-for="MainPhoto" class="form-control">
+                <span asp-validation-for="MainPhoto" style="color:red"></span>
+            </div>
+            <div class="mb-3 col-md-3">
+                <label asp-for="HoverPhoto" class="form-label">HoverPhoto</label>
+                <input asp-for="HoverPhoto" class="form-control">
+                <span asp-validation-for="HoverPhoto" style="color:red"></span>
+            </div>
+            <div class="mb-3 col-md-3">
+                <label asp-for="Photos" class="form-label">Additional Photos</label>
+                <input asp-for="Photos" class="form-control">
+                <span asp-validation-for="Photos" style="color:red"></span>
+            </div>
 
+        </div>
         <button type="submit" class="btn btn-primary" style="margin-left:190px">Create</button>
     </form>
 

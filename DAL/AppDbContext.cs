@@ -16,6 +16,7 @@ namespace Project_Pronia.DAL
         public DbSet<Slider> sliders { get; set; }
         public DbSet<Tags> tags { get; set; }
         public DbSet<Setting> Settings { get; set; }
+
     }
 
 }

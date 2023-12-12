@@ -48,7 +48,7 @@
         </div>
     </div>
     <div class="main-wrapper">
-        <!-- Begin Main Header Area -->
+        <!-- Header Area -->
         <header class="main-header-area">
             <div class="header-top bg-pronia-primary d-none d-lg-block">
                 <div class="container">
@@ -108,8 +108,8 @@
                                     <a href="tel://@setting["Phone"]">@setting["Phone"]</a>
                                 </div>
 
-                                <a href="index.html" class="header-logo">
-                                    <img src="~/assets/images/logo/@setting["Logo"]" alt="Header Logo" />
+                                <a asp-controller="Home" asp-action="Index" class="header-logo">
+                                    <img asp-controller="Home" asp-action="Index" src="~/assets/images/logo/@setting["Logo"]" alt="Header Logo" />
                                 </a>
 
                                 <div class="header-right">
@@ -129,17 +129,32 @@
                                                     data-bs-toggle="dropdown"
                                                     aria-label="setting"
                                                     aria-expanded="false">
+
                                                 <i class="pe-7s-users"></i>
+                                           
+
                                             </button>
                                             <ul class="dropdown-menu"
                                                 aria-labelledby="settingButton">
-                                                <li>
-                                                    <a class="dropdown-item" href="my-account.html">My account</a>
-                                                </li>
-                                                <li>
-                                                    <a class="dropdown-item" href="login-register.html">Login | Register</a>
-                                                </li>
-                                            </ul>
+                                                @if (User.Identity.IsAuthenticated)
+                                                {
+                                                    <li>
+                                                        <a class="dropdown-item"><b>@User.Identity.Name</b></a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="dropdown-item" asp-action="LogOut" asp-controller="Account">LogOut</a>
+                                                    </li>
+                                                }
+                                                else
+                                                {
+                                                    <li>
+                                                        <a class="dropdown-item" asp-controller="Account" asp-action="Login">Login</a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="dropdown-item" asp-action="Register" asp-controller="Account">Register</a>
+                                                    </li>
+                                                }
+                                            </ul> 
                                         </li>
                                         <li class="d-none d-lg-block">
                                             <a href="wishlist.html">
